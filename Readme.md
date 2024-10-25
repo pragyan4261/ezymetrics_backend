@@ -133,26 +133,20 @@ Extracts data from the uploaded CSV file.
 Transforms data fields (normalizes fields like id, name, email, status).
 Loads transformed data into a new CSV, available in the /output folder.
 
-
 6. Email Alerts
 Send an Alert Email
-POST /api/alert
 
-Sends an alert email with the provided message.
+Configuration
 
-Request Body:
+To set up email notifications using nodemailer, configure the transporter settings in the email notification code. The transporter configuration currently uses Gmail's SMTP service.
 
-{
-  "email": "recipient@example.com",
-  "message": "This is an alert message."
-}
+Update Email Credentials in sendNotificationEmail:
+
+Replace 'useremail' with your Gmail address.
+Replace 'yourgmailpass' with your app-specific password (generated via Gmail for 2FA-enabled accounts).
 
 
-Response:
-
-{
-  "message": "Email sent successfully!"
-}
+It will send an alert email with the provided message.
 
 
 Scheduled Tasks

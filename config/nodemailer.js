@@ -5,16 +5,16 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'parakhdas45@gmail.com', // Your Gmail address
-    pass: 'tccm hujo nujt nrub', // Gmail app-specific password
+    user: 'useremail', // Your Gmail address
+    pass: 'yourgmailpass', // Gmail app-specific password
   },
 });
 
 // Function to send notification email
 const sendNotificationEmail = async (campaign) => {
   const mailOptions = {
-    from: '"EzyMetrics" <parakhdas45@gmail.com>',
-    to: 'parthivkumardas@gmail.com', // List of recipients for testing
+    from: '"EzyMetrics" <sender@email.com>',
+    to: 'recipient@email.com', // List of recipients for testing
     subject: `Campaign Alert: ${campaign.name}`,
     text: `Campaign "${campaign.name}" has triggered an alert.\n\n` +
           `Budget Utilization: ${campaign.budgetUtilization}%\n` +
